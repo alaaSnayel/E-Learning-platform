@@ -1,5 +1,8 @@
 package com.alaa.jpa.models;
 
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,26 +17,22 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Author {
   @Id
-  @GeneratedValue(
-    strategy = GenerationType.TABLE,
-    generator = "author_id_generator"
-  )
-  @TableGenerator(
-    name = "author_id_generator",
-    table = "id_gen_table",
-    pkColumnName = "id_name",
-    valueColumnName = "gen_value",
-    pkColumnValue = "author_id",
-    initialValue = 1000,
-    allocationSize = 1
-  )
+  @GeneratedValue
   private Integer id;
 
+  @Column(name = "f_name", length = 35)
   private String firstname;
 
   private String lastname;
 
+  @Column(unique = true, nullable = false)
   private String email;
 
   private int age;
+
+  @Column(updatable = false, nullable = false)
+  private LocalDateTime createdAt;
+
+  @Column(insertable = false)
+  private LocalDateTime lastModified;
 }
