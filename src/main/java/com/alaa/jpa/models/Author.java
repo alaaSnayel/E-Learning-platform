@@ -6,11 +6,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Data
 @Entity
 public class Author {
@@ -28,8 +31,8 @@ public class Author {
 
   private int age;
 
-  @Column(updatable = false, nullable = false)
-  private LocalDateTime createdAt;
+  // @Column(updatable = false, nullable = false)
+  // private LocalDateTime createdAt;
 
   @Column(insertable = false)
   private LocalDateTime lastModified;
