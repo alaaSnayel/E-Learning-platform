@@ -1,25 +1,22 @@
 package com.alaa.jpa.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@SuperBuilder
+@EqualsAndHashCode(callSuper = true)
 @Entity
-public class Lecture {
-  @Id
-  @GeneratedValue
-  private Integer id;
+public class Lecture extends BaseEntity{
 
   private String name;
 

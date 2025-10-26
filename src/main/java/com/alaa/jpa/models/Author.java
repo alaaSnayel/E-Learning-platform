@@ -1,27 +1,23 @@
 package com.alaa.jpa.models;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Data
 @Entity
-public class Author {
-  @Id
-  @GeneratedValue
-  private Integer id;
+public class Author extends BaseEntity{
 
   @Column(name = "f_name", length = 35)
   private String firstname;
