@@ -1,7 +1,9 @@
 package com.alaa.jpa.models;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
@@ -9,6 +11,8 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class Text {
+@EqualsAndHashCode(callSuper = true)
+@Entity
+public class Text extends Resource{
  private String content;
 }
