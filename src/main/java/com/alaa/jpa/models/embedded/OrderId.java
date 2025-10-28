@@ -1,5 +1,6 @@
 package com.alaa.jpa.models.embedded;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Embeddable;
@@ -11,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Embeddable
-public class OrderId {
+public class OrderId implements Serializable{
   private String username;
 
   private LocalDateTime orderTime;
