@@ -19,10 +19,9 @@ import lombok.experimental.SuperBuilder;
 @Entity
 public class Author extends BaseEntity{
 
-  @Column(name = "f_name", length = 35)
-  private String firstname;
+  private String firstName;
 
-  private String lastname;
+  private String lastName;
 
   @Column(unique = true, nullable = false)
   private String email;
